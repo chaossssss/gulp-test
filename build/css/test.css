@@ -1,0 +1,10 @@
+.box {
+  width: 100px;
+  height: 50px;
+}
+.box .logo {
+  background: #fff;
+}
+.box .title {
+  font-size: 15px;
+}
