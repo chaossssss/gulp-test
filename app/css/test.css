@@ -1,0 +1,12 @@
+.box {
+  width: 100px;
+  height: 50px; }
+  .box .logo {
+    background: #fff; }
+  .box .title {
+    font-size: 15px; }
+
+.name {
+  color: #000; }
+  .name .name-box {
+    margin-top: 10px; }
