@@ -1,1 +1,6 @@
-alert(111);
+$(function(){
+  
+  console.log('hello');
+
+  console.log(1111);
+})

@@ -21,14 +21,17 @@ gulp.task('sass',function() {
     .pipe(browserSync.reload({stream:true}));
 });
 gulp.task('js',function(){
-  return gulp.src('js/*.js')
-    // .pipe(browserify())
-    // .pipe(uglify())
+  return gulp.src(['js/*.js','js/*.min.js'])
+    // .pipe($.browserify())
+    .pipe($.uglify())
     .pipe(gulp.dest('app/js'))
 })
 gulp.task('js-watch', ['js'], browserSync.reload);
 
-
+gulp.task('clean', function() {
+  return gulp.src( ['app/css','app/js'], {read: false} ) 
+    .pipe($.clean());
+});
 
 // gulp.task('browser-sync',function() {
 //   browserSync.init({
