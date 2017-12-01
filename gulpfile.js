@@ -11,6 +11,7 @@ var reload = browserSync.reload;
 gulp.task('less',function(){
   gulp.src('less/*.less')
     .pipe($.less())
+    .pipe($.autoprefixer())
     .pipe(gulp.dest('build/css'))
 });
 gulp.task('sass',function() {
@@ -25,6 +26,9 @@ gulp.task('js',function(){
     // .pipe($.browserify())
     .pipe($.uglify())
     .pipe(gulp.dest('app/js'))
+})
+gulp.task('css',function(){
+  return gulp.src('css/*.css')
 })
 gulp.task('js-watch', ['js'], browserSync.reload);
 
@@ -43,15 +47,16 @@ gulp.task('clean', function() {
 
 
 
-gulp.task('watch', ['sass','less','js'],function(){
+gulp.task('watch', ['sass','less','js','css'],function(){
   browserSync.init({
     server: {
       baseDir: "./"
     }
   });
-  gulp.watch('less/*.less', ['less']);
+  gulp.watch('less/*.less', ['less']).on('change',reload);
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch("js/*.js", ['js-watch']);
+  gulp.watch('css/*.css').on('change',reload);
   gulp.watch('*.html').on('change',reload);
 })
 
