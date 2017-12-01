@@ -11,3 +11,8 @@
 .name {
   color: #000;
 }
+.name .tab {
+  position: absolute;
+  top: 50x;
+  left: 20px;
+}
