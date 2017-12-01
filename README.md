@@ -13,12 +13,16 @@ js合并√
 
 实时刷新√
 
+css自动添加前缀插件autofixer√
+
+browserify搭建的服务器，用来同步刷新使用
+
 * 4还想完成的功能
 
 sourcemap压缩再实际开发中能确定错误代码的位置
 
-browserify到目前为之还是没有了解具体作用，貌似和webpack功能类似，模块管理？
+~~browserify到目前为之还是没有了解具体作用，貌似和webpack功能类似，模块管理？~~
 
-postcss的autofixer
+~~postcss的autofixer~~
 
 还有代码错误，项目自动终止的功能，虽然有两面性
